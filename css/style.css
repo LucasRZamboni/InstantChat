@@ -1,0 +1,56 @@
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+.container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#chat-container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 20px; */
+
+  border-radius: 5px;
+}
+
+#chat-messages {
+  max-height: 350px;
+  height: 350px;
+  overflow-y: scroll;
+
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buttons{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* CSS para controlar o tamanho máximo da imagem */
+.imagem-chat {
+  max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
