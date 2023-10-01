@@ -15,7 +15,6 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 // Referência para a seção de mensagens
 const messagesRef = database.ref("mensagens");
-
 // Referência para o Firebase Storage
 const storageRef = firebase.storage().ref();
 
@@ -101,6 +100,9 @@ function enviarImagem() {
     });
   });
 }
+
+
+
 
 // Configurar ouvinte para mensagens do Firebase Realtime Database
 firebase
@@ -198,5 +200,4 @@ function excluirMensagem(mensagemKey) {
   });
   console.clear();
 }
-
 
