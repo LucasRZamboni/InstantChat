@@ -7,7 +7,7 @@ const firebaseConfig = {
   messagingSenderId: "962352294724",
   appId: "1:962352294724:web:9be4d63f377726764cc511",
 };
-
+// Inicialize o Firebase
 // Inicialize o Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -17,6 +17,54 @@ const database = firebase.database();
 const messagesRef = database.ref("mensagens");
 // Referência para o Firebase Storage
 const storageRef = firebase.storage().ref();
+
+// ... (resto do seu código Firebase)
+
+// Carregue a biblioteca do OneSignal de forma assíncrona
+window.OneSignal = window.OneSignal || [];
+window.OneSignal.push(function() {
+  // Inicialize o OneSignal aqui
+  OneSignal.init({
+    appId: "a2728e04-e1de-4362-ba72-5986977b0fd5",
+    safari_web_id: "web.onesignal.auto.0534d2b4-18a9-4e11-8788-4e680cd265b6",
+    notifyButton: {
+      enable: true,
+    },
+  });
+
+  // Adicione o ouvinte de notificação aqui
+  OneSignal.on('notificationDisplay', function (event) {
+    // Código a ser executado quando uma notificação é exibida
+    const notification = event.data.notification;
+    const titulo = notification.title;
+    const mensagem = notification.body;
+    const imagemUrl = notification.icon;
+    const linkParaChat = notification.url; // Pode variar dependendo da configuração
+
+    // Solicitar permissão para exibir a notificação
+    Notification.requestPermission().then((perm) => {
+      if (perm === "granted") {
+        // Exibir a notificação
+        const notification = new Notification(titulo, {
+          body: mensagem,
+          icon: imagemUrl,
+          vibrate: [200, 100, 200],
+        });
+
+        notification.addEventListener("click", () => {
+          // Abrir o link associado à notificação em uma nova guia quando clicado
+          window.open(linkParaChat, "_blank");
+        });
+
+        notification.addEventListener("error", (e) => {
+          alert("Erro");
+        });
+      }
+    });
+  });
+});
+
+
 
 document.getElementById("enviar-mensagem").addEventListener("click", () => {
   enviarMensagem();
@@ -200,4 +248,3 @@ function excluirMensagem(mensagemKey) {
   });
   console.clear();
 }
-
