@@ -8,7 +8,7 @@ function enviarNotificacao(titulo, mensagem, imagemUrl, linkParaChat) {
       });
 
       notification.addEventListener("click", () => {
-        window.open(linkParaChat, "_blank"); // Abra a imagem em uma nova guia quando a notificação for clicada
+        window.open(linkParaChat, "https://lucasrzamboni.github.io/InstantChat/"); 
       });
 
       notification.addEventListener("error", (e) => {
