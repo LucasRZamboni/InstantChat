@@ -199,4 +199,3 @@ function excluirMensagem(mensagemKey) {
   });
   console.clear();
 }
-

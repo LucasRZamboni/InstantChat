@@ -1,5 +1,5 @@
 function enviarNotificacao(titulo, mensagem, imagemUrl, linkParaChat) {
-  Notification.requestPermission().then(perm => {
+  Notification.requestPermission().then((perm) => {
     if (perm === "granted") {
       const notification = new Notification(titulo, {
         body: mensagem,
@@ -8,10 +8,10 @@ function enviarNotificacao(titulo, mensagem, imagemUrl, linkParaChat) {
       });
 
       notification.addEventListener("click", () => {
-        window.open(linkParaChat, "_blank"); // Abra a imagem em uma nova guia quando a notificação for clicada
+        window.open(linkParaChat, "https://lucasrzamboni.github.io/InstantChat/"); 
       });
 
-      notification.addEventListener("error", e => {
+      notification.addEventListener("error", (e) => {
         alert("Erro");
       });
     }
