@@ -194,8 +194,38 @@ function excluirMensagem(mensagemKey) {
     if (error) {
       console.error("Erro ao excluir mensagem:", error);
     } else {
-      console.log("Mensagem excluída com sucesso:", mensagemKey);
+      console.log("Mensagem excluída com sucesso");
     }
   });
   console.clear();
 }
+
+// // Função para excluir mensagem do Firebase
+// function excluirMensagem(mensagemKey) {
+//   messagesRef.child(mensagemKey).once("value", (snapshot) => {
+//     const mensagem = snapshot.val();
+
+//     // Verificar se a mensagem é uma imagem
+//     if (mensagem && mensagem.tipo === "imagem") {
+//       // Referência à imagem no Storage (usando o nome do arquivo na URL)
+//       const imagemUrl = mensagem.conteudo;
+//       const imagemRef = firebase.storage().refFromURL(imagemUrl);
+
+//       // Excluir a imagem do Firebase Storage
+//       imagemRef.delete().then(() => {
+//         console.log("Imagem excluída do Storage:", imagemUrl);
+//       }).catch((error) => {
+//         console.error("Erro ao excluir imagem do Storage:", error);
+//       });
+//     }
+
+//     // Excluir a mensagem do Realtime Database
+//     messagesRef.child(mensagemKey).remove((error) => {
+//       if (error) {
+//         console.error("Erro ao excluir mensagem:", error);
+//       } else {
+//         console.log("Mensagem excluída com sucesso:", mensagemKey);
+//       }
+//     });
+//   });
+// }
