@@ -1,11 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCLmh7yh8GSAma5NI2OktWCTWbcC96K540",
-  authDomain: "instantmessage-1130e.firebaseapp.com",
-  databaseURL: "https://instantmessage-1130e-default-rtdb.firebaseio.com",
-  projectId: "instantmessage-1130e",
-  storageBucket: "instantmessage-1130e.appspot.com",
-  messagingSenderId: "962352294724",
-  appId: "1:962352294724:web:9be4d63f377726764cc511",
+  apiKey: "AIzaSyAhB8nvmZxDohdvkehG96kZoIRV7NSmDBA",
+  authDomain: "instantmessage-11caa.firebaseapp.com",
+  projectId: "instantmessage-11caa",
+  storageBucket: "instantmessage-11caa.appspot.com",
+  messagingSenderId: "914745148810",
+  appId: "1:914745148810:web:44329b3989b01a4c34b473"
 };
 
 // Inicialize o Firebase
